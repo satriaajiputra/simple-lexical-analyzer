@@ -11,7 +11,7 @@ class LexicalAnalyzer {
     let lexemes = [];
     for (const numLine in lines) {
       let lexLine = this.analyzeLine(lines[numLine].trim());
-      console.log(lexLine);
+
       for (const str in lexLine) {
         lexemes.push(new Lexeme(lexLine[str], str, numLine));
       }

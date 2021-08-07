@@ -18,11 +18,11 @@
             class="form-source__textarea"
             placeholder="Source code di sini"
           >
-    /* Membuat fungsi perkalian */
-    for ( i = 0 ; i < 5 ; i + 1) { 
-      print "Baris ke-" + ( i + 0 ) + "\n"
-      print 10 * 5 ;
-    } </textarea
+/* Perkalian 10 dari 0 sampai 4 */
+for ( i = 0 ; i < 5 ; i + 1 ) { 
+    print "Baris-" + ( i + 0 ) + "\n"
+    print 10 * i ;
+}  </textarea
           >
           <button class="btn btn-primary" type="submit">Scan Kode</button>
           <button class="btn btn-warning" id="btn-reset" type="reset">
@@ -61,6 +61,11 @@
           Setiap kata/kode/leksem harus dipisahkan dengan (spasi) agar dapat
           diidentifikasi oleh scanner
         </li>
+      </ul>
+
+      <h3>Apa saja yang discan?</h3>
+      <ul>
+        <li></li>
       </ul>
     </section>
     <script type="module">

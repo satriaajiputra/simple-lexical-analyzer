@@ -18,6 +18,7 @@ class Lexeme {
   }
 
   getToken() {
+    console.log(this._token, this._value);
     return getKeyByValue(token, this._token);
   }
 

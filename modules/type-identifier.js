@@ -29,7 +29,7 @@ class TypeIdentifier {
       case state.Q2:
         return entry == '"' ? state.Q3 : state.Q2;
       case state.Q4:
-        if (entry == ".") return state.Q6;
+        if (entry == ".") return state.Q7;
         else if (entry >= "0" && entry <= "9") return state.Q4;
         else return state.INVALIDATION_STATE;
       case state.Q5:
@@ -50,7 +50,10 @@ class TypeIdentifier {
     for (const text of str.split("")) {
       mState = this._executeTransition(mState, text);
     }
-    return this._token[mState] || token.INVALID;
+
+    return typeof this._token[mState] == "undefined"
+      ? token.INVALID
+      : this._token[mState];
   }
 }
 
