@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teknik Kompilasi - Scanner</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" type="module"></script>
+  </head>
+  <body>
+    <h1 class="text-center">Program Scanner Sederhana</h1>
+    <section class="main-wrapper">
+      <div class="grid">
+        <form action="" id="form-source">
+          <textarea
+            name="sourceCode"
+            class="form-source__textarea"
+            placeholder="Source code di sini"
+          >
+    /* Membuat fungsi perkalian */
+    for ( i = 0 ; i < 5 ; i + 1) { 
+      print "Baris ke-" + ( i + 0 ) + "\n"
+      print 10 * 5 ;
+    } </textarea
+          >
+          <button class="btn btn-primary" type="submit">Scan Kode</button>
+          <button class="btn btn-warning" id="btn-reset" type="reset">
+            Hapus
+          </button>
+        </form>
+        <div class="table-overflow">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Baris Ke</th>
+                <th>Token</th>
+                <th>Atribut/Kode</th>
+              </tr>
+            </thead>
+            <tbody id="result">
+              <tr>
+                <td colspan="3">Belum ada data</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Batasan Scanner</h3>
+      <ul style="padding: 0 0 0 20px">
+        <li>
+          Program ini hanya dapat dijalankan pada browser versi terbaru yang
+          mendukung modul javascript
+        </li>
+        <li>
+          Setiap kata di dalam /* ... */ tidak di scan dan dianggap sebagai
+          komentar
+        </li>
+        <li>
+          Setiap kata/kode/leksem harus dipisahkan dengan (spasi) agar dapat
+          diidentifikasi oleh scanner
+        </li>
+      </ul>
+    </section>
+    <script type="module">
+      import Main from "./main.js";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("form-source");
+        const tableResult = document.getElementById("result");
+        const btnReset = document.getElementById("btn-reset");
+        const main = new Main(form.sourceCode);
+
+        const templateRow = `<tr>
+              <td>{LINE}</td>
+              <td>{TOKEN}</td>
+              <td>{CODE}</td>
+            </tr>`;
+
+        form.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          let resultHTML = "";
+
+          main.analyze();
+          main.tokensTable.forEach(function (val) {
+            resultHTML += templateRow
+              .replace("{LINE}", val.getLine())
+              .replace("{TOKEN}", val.getToken())
+              .replace("{CODE}", val.getValue());
+          });
+
+          tableResult.innerHTML = resultHTML;
+        });
+
+        btnReset.addEventListener("click", function () {
+          form.sourceCode.innerHTML = "";
+        });
+      });
+    </script>
+  </body>
+</html>
