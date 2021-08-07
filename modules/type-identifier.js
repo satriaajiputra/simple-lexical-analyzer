@@ -29,7 +29,7 @@ class TypeIdentifier {
       case state.Q2:
         return entry == '"' ? state.Q3 : state.Q2;
       case state.Q4:
-        if (entry == ".") return state.Q7;
+        if (entry == ".") return state.Q6;
         else if (entry >= "0" && entry <= "9") return state.Q4;
         else return state.INVALIDATION_STATE;
       case state.Q5:
