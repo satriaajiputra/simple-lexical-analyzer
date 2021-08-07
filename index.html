@@ -19,9 +19,10 @@
             placeholder="Source code di sini"
           >
 /* Perkalian 10 dari 0 sampai 4 */
-for ( i = 0 ; i < 5 ; i + 1 ) { 
+for ( i := 0 ; i < 5 ; i + 1 ) { 
     print "Baris-" + ( i + 0 ) + "\n"
     print 10 * i ;
+    z := 10 * i ;
 }  </textarea
           >
           <button class="btn btn-primary" type="submit">Scan Kode</button>
@@ -65,7 +66,12 @@ for ( i = 0 ; i < 5 ; i + 1 ) {
 
       <h3>Apa saja yang discan?</h3>
       <ul>
-        <li></li>
+        <li>Keyword: for, while, if, else, function, return, print</li>
+        <li>Nama variabel</li>
+        <li>Operator Aritmatika: +, *, /, -, =</li>
+        <li>Operator logika: >, <, >=, <=</li>
+        <li>Delimiter: {, }, (, ), ;</li>
+        <li>Assignment: :=</li>
       </ul>
     </section>
     <script type="module">
