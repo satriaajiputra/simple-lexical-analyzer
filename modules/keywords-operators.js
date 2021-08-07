@@ -23,6 +23,7 @@ const keywordsAndOperators = {
   "(": token.LEFT_PARENTHESIS,
   ")": token.RIGHT_PARENTHESIS,
   ";": token.SEMICOLON,
+  ",": token.COMMA,
 };
 
 Object.freeze(keywordsAndOperators);
