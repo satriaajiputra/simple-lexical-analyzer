@@ -8,7 +8,7 @@ class TypeIdentifier {
     this._token[state.Q1] = token.IDENTIFIER;
     this._token[state.Q3] = token.STRING;
     this._token[state.Q4] = token.INTEGER;
-    this._token[state.Q7] = token.FLOAT;
+    this._token[state.Q6] = token.FLOAT;
   }
 
   _executeTransition(currentState, entry) {
@@ -36,9 +36,9 @@ class TypeIdentifier {
         return entry >= "0" && entry <= "9"
           ? state.Q4
           : state.INVALIDATION_STATE;
-      case state.Q7:
+      case state.Q6:
         return entry >= "0" && entry <= "9"
-          ? state.Q7
+          ? state.Q6
           : state.INVALIDATION_STATE;
       default:
         return state.INVALIDATION_STATE;

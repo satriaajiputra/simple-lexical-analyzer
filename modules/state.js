@@ -6,8 +6,7 @@ const state = {
   Q4: 4,
   Q5: 5,
   Q6: 6,
-  Q7: 7,
-  INVALIDATION_STATE: 8,
+  INVALIDATION_STATE: 7,
 };
 
 Object.freeze(state);
