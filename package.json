@@ -1,0 +1,25 @@
+{
+  "name": "scanner",
+  "version": "1.0.0",
+  "description": "Program penganalisa leksikal sederhana",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satriaajiputra/simple-lexical-analyzer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satriaajiputra/simple-lexical-analyzer/issues"
+  },
+  "homepage": "https://github.com/satriaajiputra/simple-lexical-analyzer#readme",
+  "devDependencies": {
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

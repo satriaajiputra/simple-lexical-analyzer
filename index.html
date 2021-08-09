@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teknik Kompilasi - Scanner</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" type="module"></script>
+    <script src="main.js"></script>
   </head>
   <body>
     <h1 class="text-center">Program Scanner Sederhana</h1>
@@ -78,14 +78,12 @@ for ( i := 0 ; i < 5 ; i + 1 ) {
         <li>Assignment: :=</li>
       </ul>
     </section>
-    <script type="module">
-      import Main from "./main.js";
-
+    <script>
       document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById("form-source");
         const tableResult = document.getElementById("result");
         const btnReset = document.getElementById("btn-reset");
-        const main = new Main(form.sourceCode);
+        const main = new window.MainSystem(form.sourceCode);
 
         const templateRow = `<tr>
               <td>{LINE}</td>
