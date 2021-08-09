@@ -4,8 +4,10 @@ import Lexeme from "./lexeme.js";
 
 class LexicalAnalyzer {
   /**
-   *
+   * Digunakan untuk menganalisa setiap baris dan
+   * mengumpulkan setiap token yang teridentifikasi
    * @param {Array} lines
+   * @param {Array}
    */
   analyzeCode(lines) {
     let lexemes = [];
@@ -21,8 +23,10 @@ class LexicalAnalyzer {
   }
 
   /**
-   *
+   * Digunakan untuk menganalisa satu baris
+   * dan mengubahnya menjadi berbagai jenis token
    * @param {String} line
+   * @return {Object}
    */
   analyzeLine(line) {
     let lineTokens = {};
@@ -33,10 +37,8 @@ class LexicalAnalyzer {
       const keywordAndOperator = keywordsAndOperators[str.toLocaleLowerCase()];
 
       if (typeof keywordAndOperator != "undefined") {
-        // lineTokens.set(str, keywordAndOperator);
         lineTokens[str] = keywordAndOperator;
       } else {
-        // lineTokens.set(str, typeIdentifier.evaluate(str));
         lineTokens[str] = typeIdentifier.evaluate(str);
       }
     }
